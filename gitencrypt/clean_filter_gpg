@@ -6,5 +6,5 @@ if [ "" = ${RECIPIENTS} ];then
     echo "no recipients found! Set it with git config --add hooks.gpg.recipients '-r 0xA5D08FAB -r 6D13FF05'"
     exit 1
 fi
-gpg  -se ${RECIPIENTS} 
+gpg -a -se ${RECIPIENTS} 
 
