@@ -1,8 +1,13 @@
+= Work in progress
+
+*.enc filter=gpg diff=gpg
+*.gpg filter=gpg diff=gpg
+
 Add the following to your $GIT_DIR/config
 
-
 [filter "gpg"]
-    smudge = ~/.gitencrypt/smudge_filter_gpg
-    clean = ~/.gitencrypt/clean_filter_gpg
+   smudge = gpg -d -q --batch --no-tty
+   clean = gpg -ea -q --batch --no-tty -r <pubic_id> -r <pubic_id>
 [diff "gpg"]
-    textconv = ~/.gitencrypt/diff_filter_gpg
+   textconv = decrypt
+
