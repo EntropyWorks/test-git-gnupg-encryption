@@ -1,0 +1,10 @@
+#!/bin/bash
+
+PASSPHRASE=$(git config --get hooks.gpg.passphrase)
+if [ "" = "$PASSPHRASE" ];then
+    echo "no passphrase found! Set it with git config --add hooks.gpg.passphrase <passphrase>"
+    exit 1
+fi
+
+gpg -qd --no-tty --passphrase $PASSPHRASE 
+
