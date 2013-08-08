@@ -7,3 +7,4 @@ if [ "" = "$PASSPHRASE" ];then
 fi
 
 gpg -qd --no-tty --passphrase $PASSPHRASE 
+echo "smudge_filter_gpg"

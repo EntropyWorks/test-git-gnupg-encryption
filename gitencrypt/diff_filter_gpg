@@ -8,3 +8,4 @@ fi
 
 gpg -qd --no-tty --passphrase $PASSPHRASE 
 
+echo "diff_filter_gpg"

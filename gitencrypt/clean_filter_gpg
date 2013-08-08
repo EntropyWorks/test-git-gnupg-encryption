@@ -1,5 +1,4 @@
 #!/bin/sh
-echo -n "GPG encrypting ";
 RECIPIENTS=$(git config --get hooks.gpg.recipients)
 
 if [ "" = ${RECIPIENTS} ];then
